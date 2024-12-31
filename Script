@@ -1,0 +1,895 @@
+local NightccProp = workspace:FindFirstChild("Night.cc Properties")
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local function ShowNotification(Title, Text, Time) -- Shows notification to the player
+	game.StarterGui:SetCore("SendNotification", {
+		Title = Title;
+		Text = Text;
+		Duration = Time; -- Default duration to 5 seconds if not specified
+	})
+end
+
+local function Bootup(Locking)
+	
+	local Nightcc = Instance.new("ScreenGui")
+	local BackInterface = Instance.new("Frame")
+	local UICornerBIF = Instance.new("UICorner")
+	local Title = Instance.new("TextLabel")
+	local CloseButton = Instance.new("TextButton")
+	local UICornerCB = Instance.new("UICorner")
+	local ExecutionFrame = Instance.new("Frame")
+	local InterfacesFrame = Instance.new("Frame")
+	local MainInterface = Instance.new("Frame")
+	local UICornerMI = Instance.new("UICorner")
+	local UIListLayout = Instance.new("UIListLayout")
+	local CamLockFrameFeature = Instance.new("Frame")
+	local UICornerCamLock = Instance.new("UICorner")
+	local CamLockTitle = Instance.new("TextLabel")
+	local CamLockKeybind = Instance.new("TextBox")
+	local UICornerCamLockKeybiind = Instance.new("UICorner")
+	local EnableButtonCamLock = Instance.new("TextButton")
+	local UICornerCamLockEnableButton = Instance.new("UICorner")
+	local LockingTitle = Instance.new("TextLabel")
+	local LockingTextValue = Instance.new("TextLabel")
+	local EnabledTitle = Instance.new("TextLabel")
+	local EnabledCamLockVal = Instance.new("TextLabel")
+	local CamlockPred = Instance.new("TextBox")
+	local UICornerCamLockKeybiind_2 = Instance.new("UICorner")
+	local PlayerInterface = Instance.new("Frame")
+	local UICornerPIF = Instance.new("UICorner")
+	local UIListLayout_2 = Instance.new("UIListLayout")
+	local TargetInterface = Instance.new("Frame")
+	local UICornerTIF = Instance.new("UICorner")
+	local UIListLayout_3 = Instance.new("UIListLayout")
+	local TargetUsernameBox = Instance.new("TextBox")
+	local UICornerTUB = Instance.new("UICorner")
+	local TeleportToButton = Instance.new("TextButton")
+	local UICornerTUB_2 = Instance.new("UICorner")
+	local SpectateButton = Instance.new("TextButton")
+	local UICornerTUB_3 = Instance.new("UICorner")
+	local VisuaInterface = Instance.new("Frame")
+	local UICornerVIF = Instance.new("UICorner")
+	local UIListLayout_4 = Instance.new("UIListLayout")
+	local ESPbutton = Instance.new("TextButton")
+	local UICornerESPbutton = Instance.new("UICorner")
+	local MiscInterface = Instance.new("Frame")
+	local UICornerMISIF = Instance.new("UICorner")
+	local UIListLayout_5 = Instance.new("UIListLayout")
+	local ButtonsInterface = Instance.new("Frame")
+	local UICornerBIF_2 = Instance.new("UICorner")
+	local ButtonsListInterface = Instance.new("ScrollingFrame")
+	local UIListLayout_6 = Instance.new("UIListLayout")
+	local MainButton = Instance.new("TextButton")
+	local UICornerMB = Instance.new("UICorner")
+	local PlayerButton = Instance.new("TextButton")
+	local UICornerBP = Instance.new("UICorner")
+	local TargetButton = Instance.new("TextButton")
+	local UICornerVB = Instance.new("UICorner")
+	local VisualButton = Instance.new("TextButton")
+	local UICornerVB_2 = Instance.new("UICorner")
+	local MiscButton = Instance.new("TextButton")
+	local UICornerMiscB2 = Instance.new("UICorner")
+	local Signin = Instance.new("Frame")
+	local SignInLabel = Instance.new("TextLabel")
+	local SignInButton = Instance.new("TextButton")
+	local UICornerSignInButton = Instance.new("UICorner")
+
+	--Properties:
+
+	Nightcc.Name = "Night.cc"
+	Nightcc.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	Nightcc.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	BackInterface.Name = "BackInterface"
+	BackInterface.Parent = Nightcc
+	BackInterface.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+	BackInterface.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	BackInterface.BorderSizePixel = 0
+	BackInterface.Position = UDim2.new(0.240157485, 0, 0.271210015, 0)
+	BackInterface.Size = UDim2.new(0, 528, 0, 263)
+
+	UICornerBIF.Name = "UICornerBIF"
+	UICornerBIF.Parent = BackInterface
+
+	Title.Name = "Title"
+	Title.Parent = BackInterface
+	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Title.BackgroundTransparency = 1.000
+	Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Title.BorderSizePixel = 0
+	Title.Size = UDim2.new(0, 310, 0, 19)
+	Title.Font = Enum.Font.Jura
+	Title.Text = "Night.cc | v.0 | signed in as: NONE"
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Title.TextScaled = true
+	Title.TextSize = 14.000
+	Title.TextWrapped = true
+	Title.TextXAlignment = Enum.TextXAlignment.Left
+
+	CloseButton.Name = "CloseButton"
+	CloseButton.Parent = BackInterface
+	CloseButton.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+	CloseButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	CloseButton.BorderSizePixel = 0
+	CloseButton.Position = UDim2.new(0.946969688, 0, 0, 0)
+	CloseButton.Size = UDim2.new(0, 28, 0, 28)
+	CloseButton.AutoButtonColor = false
+	CloseButton.Font = Enum.Font.Jura
+	CloseButton.Text = "X"
+	CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	CloseButton.TextScaled = true
+	CloseButton.TextSize = 14.000
+	CloseButton.TextWrapped = true
+
+	UICornerCB.Name = "UICornerCB"
+	UICornerCB.Parent = CloseButton
+
+	ExecutionFrame.Name = "ExecutionFrame"
+	ExecutionFrame.Parent = BackInterface
+	ExecutionFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ExecutionFrame.BackgroundTransparency = 1.000
+	ExecutionFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ExecutionFrame.BorderSizePixel = 0
+	ExecutionFrame.Position = UDim2.new(0, 0, 0.106463879, 0)
+	ExecutionFrame.Size = UDim2.new(0, 528, 0, 234)
+
+	InterfacesFrame.Name = "InterfacesFrame"
+	InterfacesFrame.Parent = ExecutionFrame
+	InterfacesFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	InterfacesFrame.BackgroundTransparency = 1.000
+	InterfacesFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	InterfacesFrame.BorderSizePixel = 0
+	InterfacesFrame.Position = UDim2.new(0.246212125, 0, 0.00389972911, 0)
+	InterfacesFrame.Size = UDim2.new(0, 398, 0, 234)
+
+	MainInterface.Name = "MainInterface"
+	MainInterface.Parent = InterfacesFrame
+	MainInterface.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+	MainInterface.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	MainInterface.BorderSizePixel = 0
+	MainInterface.Size = UDim2.new(0, 398, 0, 234)
+
+	UICornerMI.Name = "UICornerMI"
+	UICornerMI.Parent = MainInterface
+
+	UIListLayout.Parent = MainInterface
+	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+	CamLockFrameFeature.Name = "CamLockFrameFeature"
+	CamLockFrameFeature.Parent = MainInterface
+	CamLockFrameFeature.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+	CamLockFrameFeature.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	CamLockFrameFeature.BorderSizePixel = 0
+	CamLockFrameFeature.Size = UDim2.new(0, 398, 0, 76)
+
+	UICornerCamLock.Name = "UICornerCamLock"
+	UICornerCamLock.Parent = CamLockFrameFeature
+
+	CamLockTitle.Name = "CamLockTitle"
+	CamLockTitle.Parent = CamLockFrameFeature
+	CamLockTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	CamLockTitle.BackgroundTransparency = 1.000
+	CamLockTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	CamLockTitle.BorderSizePixel = 0
+	CamLockTitle.Size = UDim2.new(0, 111, 0, 22)
+	CamLockTitle.Font = Enum.Font.Jura
+	CamLockTitle.Text = "Cam Lock:"
+	CamLockTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	CamLockTitle.TextScaled = true
+	CamLockTitle.TextSize = 14.000
+	CamLockTitle.TextWrapped = true
+	CamLockTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+	CamLockKeybind.Name = "CamLockKeybind"
+	CamLockKeybind.Parent = CamLockFrameFeature
+	CamLockKeybind.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+	CamLockKeybind.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	CamLockKeybind.BorderSizePixel = 0
+	CamLockKeybind.Position = UDim2.new(0.0150753772, 0, 0.342105269, 0)
+	CamLockKeybind.Size = UDim2.new(0, 65, 0, 23)
+	CamLockKeybind.Font = Enum.Font.Jura
+	CamLockKeybind.PlaceholderText = "Keybind"
+	CamLockKeybind.Text = ""
+	CamLockKeybind.TextColor3 = Color3.fromRGB(255, 255, 255)
+	CamLockKeybind.TextScaled = true
+	CamLockKeybind.TextSize = 14.000
+	CamLockKeybind.TextWrapped = true
+
+	UICornerCamLockKeybiind.CornerRadius = UDim.new(0, 4)
+	UICornerCamLockKeybiind.Name = "UICornerCamLockKeybiind"
+	UICornerCamLockKeybiind.Parent = CamLockKeybind
+
+	EnableButtonCamLock.Name = "EnableButtonCamLock"
+	EnableButtonCamLock.Parent = CamLockFrameFeature
+	EnableButtonCamLock.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+	EnableButtonCamLock.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	EnableButtonCamLock.BorderSizePixel = 0
+	EnableButtonCamLock.Position = UDim2.new(0.206030145, 0, 0.355263144, 0)
+	EnableButtonCamLock.Size = UDim2.new(0, 88, 0, 22)
+	EnableButtonCamLock.Font = Enum.Font.Jura
+	EnableButtonCamLock.Text = "Enable"
+	EnableButtonCamLock.TextColor3 = Color3.fromRGB(111, 255, 0)
+	EnableButtonCamLock.TextScaled = true
+	EnableButtonCamLock.TextSize = 14.000
+	EnableButtonCamLock.TextWrapped = true
+
+	UICornerCamLockEnableButton.CornerRadius = UDim.new(0, 4)
+	UICornerCamLockEnableButton.Name = "UICornerCamLockEnableButton"
+	UICornerCamLockEnableButton.Parent = EnableButtonCamLock
+
+	LockingTitle.Name = "LockingTitle?"
+	LockingTitle.Parent = CamLockFrameFeature
+	LockingTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	LockingTitle.BackgroundTransparency = 1.000
+	LockingTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	LockingTitle.BorderSizePixel = 0
+	LockingTitle.Position = UDim2.new(0.296482414, 0, 0, 0)
+	LockingTitle.Size = UDim2.new(0, 65, 0, 22)
+	LockingTitle.Font = Enum.Font.Jura
+	LockingTitle.Text = "Locking:"
+	LockingTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	LockingTitle.TextScaled = true
+	LockingTitle.TextSize = 14.000
+	LockingTitle.TextWrapped = true
+	LockingTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+	LockingTextValue.Name = "LockingTextValue"
+	LockingTextValue.Parent = CamLockFrameFeature
+	LockingTextValue.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	LockingTextValue.BackgroundTransparency = 1.000
+	LockingTextValue.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	LockingTextValue.BorderSizePixel = 0
+	LockingTextValue.Position = UDim2.new(0.459798992, 0, 0, 0)
+	LockingTextValue.Size = UDim2.new(0, 65, 0, 22)
+	LockingTextValue.Font = Enum.Font.Jura
+	LockingTextValue.Text = "False"
+	LockingTextValue.TextColor3 = Color3.fromRGB(255, 0, 0)
+	LockingTextValue.TextScaled = true
+	LockingTextValue.TextSize = 14.000
+	LockingTextValue.TextWrapped = true
+	LockingTextValue.TextXAlignment = Enum.TextXAlignment.Left
+
+	EnabledTitle.Name = "EnabledTitle?"
+	EnabledTitle.Parent = CamLockFrameFeature
+	EnabledTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	EnabledTitle.BackgroundTransparency = 1.000
+	EnabledTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	EnabledTitle.BorderSizePixel = 0
+	EnabledTitle.Position = UDim2.new(0.673366845, 0, 0, 0)
+	EnabledTitle.Size = UDim2.new(0, 65, 0, 22)
+	EnabledTitle.Font = Enum.Font.Jura
+	EnabledTitle.Text = "Enabled:"
+	EnabledTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	EnabledTitle.TextScaled = true
+	EnabledTitle.TextSize = 14.000
+	EnabledTitle.TextWrapped = true
+	EnabledTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+	EnabledCamLockVal.Name = "EnabledCamLockVal"
+	EnabledCamLockVal.Parent = CamLockFrameFeature
+	EnabledCamLockVal.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	EnabledCamLockVal.BackgroundTransparency = 1.000
+	EnabledCamLockVal.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	EnabledCamLockVal.BorderSizePixel = 0
+	EnabledCamLockVal.Position = UDim2.new(0.836683393, 0, 0, 0)
+	EnabledCamLockVal.Size = UDim2.new(0, 65, 0, 22)
+	EnabledCamLockVal.Font = Enum.Font.Jura
+	EnabledCamLockVal.Text = "False"
+	EnabledCamLockVal.TextColor3 = Color3.fromRGB(255, 0, 0)
+	EnabledCamLockVal.TextScaled = true
+	EnabledCamLockVal.TextSize = 14.000
+	EnabledCamLockVal.TextWrapped = true
+	EnabledCamLockVal.TextXAlignment = Enum.TextXAlignment.Left
+
+	CamlockPred.Name = "CamlockPred"
+	CamlockPred.Parent = CamLockFrameFeature
+	CamlockPred.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+	CamlockPred.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	CamlockPred.BorderSizePixel = 0
+	CamlockPred.Position = UDim2.new(0.0150753772, 0, 0.723684192, 0)
+	CamlockPred.Size = UDim2.new(0, 164, 0, 16)
+	CamlockPred.Font = Enum.Font.Jura
+	CamlockPred.PlaceholderText = "prediction"
+	CamlockPred.Text = "0.2"
+	CamlockPred.TextColor3 = Color3.fromRGB(255, 255, 255)
+	CamlockPred.TextScaled = true
+	CamlockPred.TextSize = 14.000
+	CamlockPred.TextWrapped = true
+
+	UICornerCamLockKeybiind_2.CornerRadius = UDim.new(0, 4)
+	UICornerCamLockKeybiind_2.Name = "UICornerCamLockKeybiind"
+	UICornerCamLockKeybiind_2.Parent = CamlockPred
+
+	PlayerInterface.Name = "PlayerInterface"
+	PlayerInterface.Parent = InterfacesFrame
+	PlayerInterface.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+	PlayerInterface.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	PlayerInterface.BorderSizePixel = 0
+	PlayerInterface.Size = UDim2.new(0, 398, 0, 234)
+	PlayerInterface.Visible = false
+
+	UICornerPIF.Name = "UICornerPIF"
+	UICornerPIF.Parent = PlayerInterface
+
+	UIListLayout_2.Parent = PlayerInterface
+	UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+
+	TargetInterface.Name = "TargetInterface"
+	TargetInterface.Parent = InterfacesFrame
+	TargetInterface.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+	TargetInterface.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TargetInterface.BorderSizePixel = 0
+	TargetInterface.Size = UDim2.new(0, 398, 0, 234)
+	TargetInterface.Visible = false
+
+	UICornerTIF.Name = "UICornerTIF"
+	UICornerTIF.Parent = TargetInterface
+
+	UIListLayout_3.Parent = TargetInterface
+	UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
+	UIListLayout_3.Padding = UDim.new(0, 5)
+
+	TargetUsernameBox.Name = "TargetUsernameBox"
+	TargetUsernameBox.Parent = TargetInterface
+	TargetUsernameBox.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+	TargetUsernameBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TargetUsernameBox.BorderSizePixel = 0
+	TargetUsernameBox.Size = UDim2.new(0, 398, 0, 50)
+	TargetUsernameBox.Font = Enum.Font.Jura
+	TargetUsernameBox.PlaceholderText = "Target Username"
+	TargetUsernameBox.Text = ""
+	TargetUsernameBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TargetUsernameBox.TextScaled = true
+	TargetUsernameBox.TextSize = 14.000
+	TargetUsernameBox.TextWrapped = true
+	TargetUsernameBox.ClearTextOnFocus = false
+
+	UICornerTUB.Name = "UICornerTUB"
+	UICornerTUB.Parent = TargetUsernameBox
+
+	TeleportToButton.Name = "TeleportToButton"
+	TeleportToButton.Parent = TargetInterface
+	TeleportToButton.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+	TeleportToButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TeleportToButton.BorderSizePixel = 0
+	TeleportToButton.Position = UDim2.new(0, 0, 0.235042736, 0)
+	TeleportToButton.Size = UDim2.new(0, 398, 0, 31)
+	TeleportToButton.Font = Enum.Font.Jura
+	TeleportToButton.Text = "Teleport to"
+	TeleportToButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TeleportToButton.TextScaled = true
+	TeleportToButton.TextSize = 14.000
+	TeleportToButton.TextWrapped = true
+
+	UICornerTUB_2.Name = "UICornerTUB"
+	UICornerTUB_2.Parent = TeleportToButton
+
+	SpectateButton.Name = "SpectateButton"
+	SpectateButton.Parent = TargetInterface
+	SpectateButton.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+	SpectateButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	SpectateButton.BorderSizePixel = 0
+	SpectateButton.Position = UDim2.new(0, 0, 0.235042736, 0)
+	SpectateButton.Size = UDim2.new(0, 398, 0, 31)
+	SpectateButton.Font = Enum.Font.Jura
+	SpectateButton.Text = "Spectate"
+	SpectateButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	SpectateButton.TextScaled = true
+	SpectateButton.TextSize = 14.000
+	SpectateButton.TextWrapped = true
+
+	UICornerTUB_3.Name = "UICornerTUB"
+	UICornerTUB_3.Parent = SpectateButton
+
+	VisuaInterface.Name = "VisuaInterface"
+	VisuaInterface.Parent = InterfacesFrame
+	VisuaInterface.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+	VisuaInterface.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	VisuaInterface.BorderSizePixel = 0
+	VisuaInterface.Size = UDim2.new(0, 398, 0, 234)
+	VisuaInterface.Visible = false
+
+	UICornerVIF.Name = "UICornerVIF"
+	UICornerVIF.Parent = VisuaInterface
+
+	UIListLayout_4.Parent = VisuaInterface
+	UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
+
+	ESPbutton.Name = "ESPbutton"
+	ESPbutton.Parent = VisuaInterface
+	ESPbutton.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+	ESPbutton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ESPbutton.BorderSizePixel = 0
+	ESPbutton.Size = UDim2.new(0, 398, 0, 33)
+	ESPbutton.Font = Enum.Font.Jura
+	ESPbutton.Text = "ESP: OFF"
+	ESPbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	ESPbutton.TextScaled = true
+	ESPbutton.TextSize = 14.000
+	ESPbutton.TextWrapped = true
+
+	UICornerESPbutton.Name = "UICornerESPbutton"
+	UICornerESPbutton.Parent = ESPbutton
+
+	MiscInterface.Name = "MiscInterface"
+	MiscInterface.Parent = InterfacesFrame
+	MiscInterface.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+	MiscInterface.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	MiscInterface.BorderSizePixel = 0
+	MiscInterface.Size = UDim2.new(0, 398, 0, 234)
+	MiscInterface.Visible = false
+
+	UICornerMISIF.Name = "UICornerMISIF"
+	UICornerMISIF.Parent = MiscInterface
+
+	UIListLayout_5.Parent = MiscInterface
+	UIListLayout_5.SortOrder = Enum.SortOrder.LayoutOrder
+
+	ButtonsInterface.Name = "ButtonsInterface"
+	ButtonsInterface.Parent = ExecutionFrame
+	ButtonsInterface.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+	ButtonsInterface.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ButtonsInterface.BorderSizePixel = 0
+	ButtonsInterface.Position = UDim2.new(0, 0, -0.00464727962, 0)
+	ButtonsInterface.Size = UDim2.new(0, 130, 0, 235)
+
+	UICornerBIF_2.Name = "UICornerBIF"
+	UICornerBIF_2.Parent = ButtonsInterface
+
+	ButtonsListInterface.Name = "ButtonsListInterface"
+	ButtonsListInterface.Parent = ButtonsInterface
+	ButtonsListInterface.Active = true
+	ButtonsListInterface.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ButtonsListInterface.BackgroundTransparency = 1.000
+	ButtonsListInterface.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ButtonsListInterface.BorderSizePixel = 0
+	ButtonsListInterface.Size = UDim2.new(0, 130, 0, 234)
+	ButtonsListInterface.ScrollBarThickness = 1
+	ButtonsListInterface.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
+
+	UIListLayout_6.Parent = ButtonsListInterface
+	UIListLayout_6.SortOrder = Enum.SortOrder.LayoutOrder
+	UIListLayout_6.Padding = UDim.new(0, 5)
+
+	MainButton.Name = "MainButton"
+	MainButton.Parent = ButtonsListInterface
+	MainButton.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+	MainButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	MainButton.BorderSizePixel = 0
+	MainButton.Size = UDim2.new(0, 130, 0, 22)
+	MainButton.Font = Enum.Font.Jura
+	MainButton.Text = "Main"
+	MainButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	MainButton.TextScaled = true
+	MainButton.TextSize = 14.000
+	MainButton.TextWrapped = true
+
+	UICornerMB.Name = "UICornerMB"
+	UICornerMB.Parent = MainButton
+
+	PlayerButton.Name = "PlayerButton"
+	PlayerButton.Parent = ButtonsListInterface
+	PlayerButton.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+	PlayerButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	PlayerButton.BorderSizePixel = 0
+	PlayerButton.Size = UDim2.new(0, 130, 0, 22)
+	PlayerButton.Font = Enum.Font.Jura
+	PlayerButton.Text = "Player"
+	PlayerButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	PlayerButton.TextScaled = true
+	PlayerButton.TextSize = 14.000
+	PlayerButton.TextWrapped = true
+
+	UICornerBP.Name = "UICornerBP"
+	UICornerBP.Parent = PlayerButton
+
+	TargetButton.Name = "TargetButton"
+	TargetButton.Parent = ButtonsListInterface
+	TargetButton.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+	TargetButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TargetButton.BorderSizePixel = 0
+	TargetButton.Size = UDim2.new(0, 130, 0, 22)
+	TargetButton.Font = Enum.Font.Jura
+	TargetButton.Text = "Target"
+	TargetButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TargetButton.TextScaled = true
+	TargetButton.TextSize = 14.000
+	TargetButton.TextWrapped = true
+
+	UICornerVB.Name = "UICornerVB"
+	UICornerVB.Parent = TargetButton
+
+	VisualButton.Name = "VisualButton"
+	VisualButton.Parent = ButtonsListInterface
+	VisualButton.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+	VisualButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	VisualButton.BorderSizePixel = 0
+	VisualButton.Size = UDim2.new(0, 130, 0, 22)
+	VisualButton.Font = Enum.Font.Jura
+	VisualButton.Text = "Visual"
+	VisualButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	VisualButton.TextScaled = true
+	VisualButton.TextSize = 14.000
+	VisualButton.TextWrapped = true
+
+	UICornerVB_2.Name = "UICornerVB"
+	UICornerVB_2.Parent = VisualButton
+
+	MiscButton.Name = "MiscButton"
+	MiscButton.Parent = ButtonsListInterface
+	MiscButton.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+	MiscButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	MiscButton.BorderSizePixel = 0
+	MiscButton.Size = UDim2.new(0, 130, 0, 22)
+	MiscButton.Font = Enum.Font.Jura
+	MiscButton.Text = "Misc"
+	MiscButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	MiscButton.TextScaled = true
+	MiscButton.TextSize = 14.000
+	MiscButton.TextWrapped = true
+
+	UICornerMiscB2.Name = "UICornerMiscB2"
+	UICornerMiscB2.Parent = MiscButton
+
+	Signin.Name = "Signin"
+	Signin.Parent = BackInterface
+	Signin.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Signin.BackgroundTransparency = 1.000
+	Signin.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Signin.BorderSizePixel = 0
+	Signin.Position = UDim2.new(0, 0, 0.106463879, 0)
+	Signin.Size = UDim2.new(0, 528, 0, 234)
+	Signin.Visible = false
+
+	SignInLabel.Name = "SignInLabel"
+	SignInLabel.Parent = Signin
+	SignInLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	SignInLabel.BackgroundTransparency = 1.000
+	SignInLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	SignInLabel.BorderSizePixel = 0
+	SignInLabel.Position = UDim2.new(0.204545453, 0, 0, 0)
+	SignInLabel.Size = UDim2.new(0, 311, 0, 58)
+	SignInLabel.Font = Enum.Font.Jura
+	SignInLabel.Text = "PLAYER USERNAME!"
+	SignInLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+	SignInLabel.TextScaled = true
+	SignInLabel.TextSize = 14.000
+	SignInLabel.TextWrapped = true
+
+	SignInButton.Name = "SignInButton"
+	SignInButton.Parent = Signin
+	SignInButton.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+	SignInButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	SignInButton.BorderSizePixel = 0
+	SignInButton.Position = UDim2.new(0.13636364, 0, 0.54273504, 0)
+	SignInButton.Size = UDim2.new(0, 382, 0, 64)
+	SignInButton.Font = Enum.Font.Jura
+	SignInButton.Text = "Sign in"
+	SignInButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	SignInButton.TextScaled = true
+	SignInButton.TextSize = 14.000
+	SignInButton.TextWrapped = true
+
+	UICornerSignInButton.CornerRadius = UDim.new(0, 5)
+	UICornerSignInButton.Name = "UICornerSignInButton"
+	UICornerSignInButton.Parent = SignInButton
+
+BackInterface.Draggable = true
+BackInterface.Selectable = true
+BackInterface.Active = true
+
+Nightcc.ResetOnSpawn = false
+
+ExecutionFrame.Visible = false
+Signin.Visible = true
+
+	Title.Text = "Night.cc |Made by: fentaddict and WhyJUSTnoy | signed in as: NONE"
+
+SignInButton.MouseButton1Click:Connect(function()
+	if SignInButton.Text == "Sign in" then
+		SignInButton.Text = "Signing in..."
+		wait(0.5)
+		Signin.Visible = false
+		ExecutionFrame.Visible = true
+			Title.Text = "Night.cc |Made by: fentaddict and WhyJUSTnoy | signed in as: "..player.Name
+	end
+end)
+
+MainButton.MouseButton1Click:Connect(function()
+	MainInterface.Visible = true
+	MiscInterface.Visible = false
+	PlayerInterface.Visible = false
+	TargetInterface.Visible = false
+	VisuaInterface.Visible = false
+end)
+
+MiscButton.MouseButton1Click:Connect(function()
+	MainInterface.Visible = false
+	MiscInterface.Visible = true
+	PlayerInterface.Visible = false
+	TargetInterface.Visible = false
+	VisuaInterface.Visible = false
+end)
+
+PlayerButton.MouseButton1Click:Connect(function()
+	MainInterface.Visible = false
+	MiscInterface.Visible = false
+	PlayerInterface.Visible = true
+	TargetInterface.Visible = false
+	VisuaInterface.Visible = false
+end)
+
+TargetButton.MouseButton1Click:Connect(function()
+	MainInterface.Visible = false
+	MiscInterface.Visible = false
+	PlayerInterface.Visible = false
+	TargetInterface.Visible = true
+	VisuaInterface.Visible = false
+end)
+
+VisualButton.MouseButton1Click:Connect(function()
+	MainInterface.Visible = false
+	MiscInterface.Visible = false
+	PlayerInterface.Visible = false
+	TargetInterface.Visible = false
+	VisuaInterface.Visible = true
+end)
+
+local function TeleportTo(Targeted)
+	if Targeted then
+		local char = player.Character
+		local root = char:FindFirstChild("HumanoidRootPart")
+
+		local TarChar = Targeted.Character
+		local RootChar = TarChar:FindFirstChild("HumanoidRootPart")
+
+		root.CFrame = RootChar.CFrame
+	end
+end
+
+local Spectating = false
+
+local function Spectate(targeted, Spec)
+	-- Ensure the target is a valid player
+	if targeted then
+		local camera = workspace.CurrentCamera
+
+		if targeted.Character then
+			if Spec == true then
+				camera.CameraSubject = targeted.Character:WaitForChild("Humanoid")
+			else
+				camera.CameraSubject = player.Character:FindFirstChild("Humanoid")
+			end
+		end
+
+	else
+		warn("Target not found!")
+	end
+end
+
+TeleportToButton.MouseButton1Click:Connect(function()
+	local TargerUsername_Inp = TargetUsernameBox.Text
+	local Target = Players:FindFirstChild(TargerUsername_Inp)
+
+	if Target then
+		TeleportTo(Target)
+	end
+end)
+
+SpectateButton.MouseButton1Click:Connect(function()
+	local TargetUsername_Inp = TargetUsernameBox.Text
+	local Target = Players:FindFirstChild(TargetUsername_Inp)
+
+	if Target then
+		if Spectating == false then
+			Spectating = true
+			SpectateButton.Text = "Stop Spectating"
+			Spectate(Target, true)
+		else
+			Spectating = false
+			SpectateButton.Text = "Spectate"
+			Spectate(Target, false)
+		end
+	end
+end)
+
+local ESPEnabled = false
+
+local function createESPBox(character)
+	for _, part in pairs(character:GetChildren()) do
+		if part:IsA("BasePart") then
+			local box = Instance.new("BoxHandleAdornment")
+			box.Size = part.Size
+			box.Adornee = part
+			box.AlwaysOnTop = true
+			box.ZIndex = 10
+			box.Color3 = Color3.fromRGB(255, 0, 0)
+			box.Transparency = 0.5
+			box.Parent = part
+		end
+	end
+end
+
+local function removeESPBox(character)
+	for _, part in pairs(character:GetChildren()) do
+		if part:IsA("BasePart") then
+			for _, child in pairs(part:GetChildren()) do
+				if child:IsA("BoxHandleAdornment") then
+					child:Destroy()
+				end
+			end
+		end
+	end
+end
+
+ESPbutton.MouseButton1Click:Connect(function()
+	ESPEnabled = not ESPEnabled
+	if ESPEnabled then
+		ESPbutton.Text = "ESP: ON"
+		for _, player in pairs(game.Players:GetPlayers()) do
+			if player.Character then
+				createESPBox(player.Character)
+			end
+		end
+		game.Players.PlayerAdded:Connect(function(player)
+			player.CharacterAdded:Connect(function(character)
+				createESPBox(character)
+			end)
+		end)
+	else
+		ESPbutton.Text = "ESP: OFF"
+		for _, player in pairs(game.Players:GetPlayers()) do
+			if player.Character then
+				removeESPBox(player.Character)
+			end
+		end
+	end
+end)
+
+
+---
+
+local CamLock_Enabled = false
+local target -- Variable to store the target player
+local UIS = game:GetService("UserInputService")
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local Mouse = Players.LocalPlayer:GetMouse()
+
+-- Function to toggle cam lock
+local function toggleCamLock()
+	if CamLock_Enabled == true then
+		CamLock_Enabled = false
+		Locking = false
+		LockingTextValue.Text = "False"
+		LockingTextValue.TextColor3 = Color3.new(1, 0, 0)
+		EnabledCamLockVal.Text = "False"
+		EnabledCamLockVal.TextColor3 = Color3.new(1, 0, 0)
+		EnableButtonCamLock.Text = "Disable"
+		EnableButtonCamLock.TextColor3 = Color3.new(1, 0, 0)
+	else
+		CamLock_Enabled = true
+		EnabledCamLockVal.Text = "True"
+		EnabledCamLockVal.TextColor3 = Color3.new(0.133333, 1, 0)
+		EnableButtonCamLock.Text = "Enable"
+		EnableButtonCamLock.TextColor3 = Color3.new(0.215686, 1, 0)
+	end
+end
+
+-- Function to find the closest target to the cursor
+local function getClosestTarget()
+	local closestTarget = nil
+	local shortestDistance = math.huge
+
+	for _, Eplayer in pairs(Players:GetPlayers()) do
+		if Eplayer ~= Players.LocalPlayer and Eplayer.Character and Eplayer.Character:FindFirstChild("HumanoidRootPart") then
+			local screenPoint = workspace.CurrentCamera:WorldToScreenPoint(Eplayer.Character.HumanoidRootPart.Position)
+			local distance = (Vector2.new(screenPoint.X, screenPoint.Y) - Vector2.new(Mouse.X, Mouse.Y)).Magnitude
+
+			if distance < shortestDistance then
+				closestTarget = Eplayer
+				shortestDistance = distance
+				ShowNotification("Locked!", "Locked on "..Eplayer.Name.."!")
+			end
+		end
+	end
+
+	return closestTarget
+end
+
+-- Function to update camera position
+local function updateCamera()
+	if CamLock_Enabled and Locking and target and target.Character then
+		local targetPart = target.Character:FindFirstChild("HumanoidRootPart")
+		if targetPart then
+			local targetPosition = targetPart.Position
+			local velocity = targetPart.Velocity
+			local predictionTime = CamlockPred.Text
+
+			if velocity.Magnitude > 0 then
+				targetPosition = targetPosition + (velocity * predictionTime)
+			end
+
+			workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.Position, targetPosition)
+		end
+	end
+end
+
+-- Connect input to toggle cam lock
+UIS.InputBegan:Connect(function(key)
+	if key.KeyCode == Enum.KeyCode[CamLockKeybind.Text] then
+		if CamLock_Enabled and Locking == false then
+			-- Set the target player to the closest to the cursor
+			target = getClosestTarget()
+			Locking = true
+			LockingTextValue.Text = "True"
+			LockingTextValue.TextColor3 = Color3.new(0.184314, 1, 0)
+		elseif Locking == true then
+			Locking = false
+			LockingTextValue.Text = "False"
+			LockingTextValue.TextColor3 = Color3.new(1, 0, 0)
+		elseif CamLock_Enabled == false then
+			Locking = false
+			LockingTextValue.Text = "False"
+			LockingTextValue.TextColor3 = Color3.new(1, 0, 0)
+		end
+	end
+end)
+
+EnableButtonCamLock.MouseButton1Click:Connect(function()
+	toggleCamLock()
+end)
+
+-- Update the camera every frame
+RunService.RenderStepped:Connect(updateCamera)
+
+
+CloseButton.MouseButton1Click:Connect(function()
+	local prop = workspace:FindFirstChild("Night.cc Properties")
+
+	if prop then
+		prop:Destroy()
+		Nightcc:Destroy()
+		Locking = false
+		CamLock_Enabled = false
+		
+		prop:FindFirstChild("GuiStats").Value = false
+	end
+end)
+
+	UIS.InputBegan:Connect(function(key)
+		if key.KeyCode == Enum.KeyCode.RightAlt then
+			BackInterface.Visible = not BackInterface.Visible
+		end
+	end)
+
+CamLockKeybind.Text = "Q"
+end
+
+ShowNotification("Executed!", "Night.cc have been executed!")
+
+if NightccProp then
+	warn("Night.cc is already exists, loading gui!")
+	wait(1)
+	if NightccProp:FindFirstChild("GuiStats").Value == true then
+		warn("Gui is already exists!")
+	else
+		warn("Gui loaded!")
+		NightccProp:FindFirstChild("GuiStats").Value = true
+		Bootup(NightccProp:FindFirstChild("Locking").Value)
+	end
+else
+	local NightccProp = Instance.new("Folder", workspace)
+	NightccProp.Name = "Night.cc Properties"
+	
+	local Locking = Instance.new("BoolValue", NightccProp)
+	Locking.Name = "Locking"
+	
+	local GuiStats = Instance.new("BoolValue", NightccProp)
+	GuiStats.Value = true
+	GuiStats.Name = "GuiStats"
+
+	Bootup(Locking.Value)
+end
